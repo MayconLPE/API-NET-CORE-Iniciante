@@ -8,7 +8,9 @@ namespace IntroducaoNETCORE.Date
         public DbSet<Employee> Employees { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.Use
+            => optionsBuilder.UseSqlServer(
+                "server=MAYCON; Database=employee; trusted_connection=true"
+                );
         
     }
 }
